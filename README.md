@@ -14,13 +14,15 @@ npm install -g @tanben/generator-nrsynthetics-workspace
 Then generate your new project:
 
 ```bash
-yo nrsynthetics-workspace
+
+yo @tanben/nrsynthetics-workspace
+
 ```
 
 
 # Generating a NR Synthetics workspace
 
-1. Run `yo nrsynthetics-workspace` from commandline
+1. Run `yo @tanben/nrsynthetics-workspace` from commandline
 
 2. Select `Yes` when prompted `? Enable Download/Upload of Synthetics scripts to your account?`
 
@@ -44,7 +46,7 @@ This generator can also be run with: yo synth-generator
 ? Enter your admin Api Key NRAA-XXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 ```
-The admin key will be stored in `.nrconfig.json`.
+A workspace is created called `synthetics-local`, the admin key will be stored in `.nrconfig.json`.
 
 ## Download / Upload monitor
 1. Download monitor by running this command: `npm run download` to upload `npm run upload`
