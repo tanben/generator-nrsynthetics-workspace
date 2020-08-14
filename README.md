@@ -8,7 +8,7 @@ First, install [Yeoman](http://yeoman.io) and generator-nrsynthetics-workspace u
 
 ```bash
 npm install -g yo
-npm install -g generator-nrsynthetics-workspace
+npm install -g @tanben/generator-nrsynthetics-workspace
 ```
 
 Then generate your new project:

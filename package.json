@@ -1,6 +1,6 @@
 {
-  "name": "generator-nrsynthetics-workspace",
-  "version": "0.1.0",
+  "name": "@tanben/generator-nrsynthetics-workspace",
+  "version": "0.1.1",
   "description": "Generate local workspace for creating/testing NR Synthetics ScriptedBrowse and API Tests.",
   "homepage": "https://github.com/tanben",
   "author": {
