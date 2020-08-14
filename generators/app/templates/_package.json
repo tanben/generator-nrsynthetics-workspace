@@ -1,0 +1,55 @@
+{
+  "name": "<%= projectName %>",
+  "version": "0.5.0",
+  "description": "New Relic Synthetics local development environment",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "download": "node apps/downloadScripts.js",
+    "download:config": "node apps/downloadConfig.js",
+    "upload": "node apps/uploadScripts.js"
+  },
+  "dependencies": {
+    "atob": "^2.1.0",
+    "aws-sdk": "^2.465.0",
+    "btoa": "^1.1.2",
+    "chai": "^4.2.0",
+    "chai-webdriver": "^1.2.0",
+    "colors": "^1.3.3",
+    "consoleplusplus": "^1.4.1",
+    "crypto-js": "^3.1.9-1",
+    "faker": "^4.1.0",
+    "joi": "^14.3.1",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "net-ping": "^1.2.3",
+    "net-snmp": "^1.2.4",
+    "nodejs-traceroute": "^1.1.1",
+    "protocol-buffers": "^4.1.0",
+    "q": "^1.5.1",
+    "request": "^2.88.0",
+    "simple-git": "^1.66.0",
+    "tough-cookie": "^3.0.0",
+    "underscore": "^1.9.0",
+    "url-parse": "^1.4.4",
+    "urllib": "^2.33.0",
+    "urllib-sync": "^1.1.4",
+    "uuid": "^3.1.0",
+    "validator": "^10.11.0",
+    "ws": "^6.1.3",
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {
+    "@tanben/nr-synthetics-client": "0.1.0",
+    "chalk": "^4.1.0",
+    "chromedriver": "^83.0.1",
+    "got": "^11.5.2",
+    "inquirer": "^7.3.3",
+    "make-dir": "^3.1.0",
+    "request": "^2.88.2",
+    "selenium-webdriver": "^3.6.0"
+  },
+  "keywords": []
+}

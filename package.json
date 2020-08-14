@@ -1,0 +1,70 @@
+{
+  "name": "generator-nrsynthetics-workspace",
+  "version": "0.1.0",
+  "description": "Generate local workspace for creating/testing NR Synthetics ScriptedBrowse and API Tests.",
+  "homepage": "https://github.com/tanben",
+  "author": {
+    "name": "Benedicto Tan",
+    "email": "ben.tan.dev@gmail.com",
+    "url": "https://github.com/tanben"
+  },
+  "repository": "git://github.com/tanben/generator-nrsynthetics-workspace.git",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "bugs": {
+    "url": "https://github.com/tanben/generator-nrsynthetics-workspace/issues"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "new relic",
+    "synthetics",
+    "yeoman-generator"
+  ],
+  "devDependencies": {
+    "yeoman-test": "^1.7.0",
+    "yeoman-assert": "^3.1.0",
+    "eslint": "^6.6.0",
+    "prettier": "^1.19.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.3",
+    "eslint-config-prettier": "^6.6.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-config-xo": "^0.27.2",
+    "jest": "^26.1.0"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "dependencies": {
+    "yeoman-generator": "^2.0.1",
+    "chalk": "^2.1.0",
+    "yosay": "^2.0.1"
+  },
+  
+  
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "scripts": {
+    "pretest": "eslint .",
+    "test": "jest"
+  },
+  "license": "Apache-2.0"
+}

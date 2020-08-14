@@ -1,50 +1,8 @@
-# generator-nrsynthetics-workspace 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> Generate local workspace for creating/testing NR Synthetics ScriptedBrowse and API Tests.
+# New Relic Synthetics workspace
+Generate New Relic Synthetics workspace for local development.
 
-## Installation
+* The admin key is stored in `.nrconfig.json`
 
-First, install [Yeoman](http://yeoman.io) and generator-nrsynthetics-workspace using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
-
-```bash
-npm install -g yo
-npm install -g generator-nrsynthetics-workspace
-```
-
-Then generate your new project:
-
-```bash
-yo nrsynthetics-workspace
-```
-
-
-# Generating a NR Synthetics workspace
-
-1. Run `yo nrsynthetics-workspace` from commandline
-
-2. Select `Yes` when prompted `? Enable Download/Upload of Synthetics scripts to your account?`
-
-3. Enter your Admin API Key when prompted `? Enter your admin Api Key`
-
-```
-This generator can also be run with: yo synth-generator
-
-
-     _-----_     ╭──────────────────────────╮
-    |       |    │      Welcome to the      │
-    |--(o)--|    │   bedazzling Synthetics  │
-   `---------´   │        generator!        │
-    ( _´U`_ )    ╰──────────────────────────╯
-    /___A___\   /
-     |  ~  |     
-   __'.___.'__   
- ´   `  |° ´ Y ` 
-
-? Enable Download/Upload of Synthetics scripts to your account? Yes
-? Enter your admin Api Key NRAA-XXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-```
-The admin key will be stored in `.nrconfig.json`.
 
 ## Download / Upload monitor
 1. Download monitor by running this command: `npm run download` to upload `npm run upload`
