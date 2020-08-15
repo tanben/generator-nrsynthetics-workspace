@@ -1,8 +1,8 @@
 /**
  * For local development
  */
-if (typeof $env === "undefined") {
-  require("../lib/simulator")();
+if (typeof $env === "undefined" || $env === null) {
+  require("../lib/simulator");
 }
 
 /**

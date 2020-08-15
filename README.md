@@ -77,6 +77,7 @@ Add this to the top of your script, the library mimcs the Synthetics API and imp
 
 ```
     if (typeof $env === 'undefined'){
+        global._isApiTest = false; // true for API tests
         require('../lib/simulator')();
     }
 

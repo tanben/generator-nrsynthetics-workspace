@@ -66,11 +66,14 @@ var capabilities = {
   }
 };
 
-var browser = new driver.Builder()
-  .forBrowser("chrome")
-  .withCapabilities(capabilities)
-  .setChromeOptions(options)
-  .build();
+let browser = {};
+if (typeof global._isApiTest === "undefined" || global._isApiTest === false) {
+  browser = new driver.Builder()
+    .forBrowser("chrome")
+    .withCapabilities(capabilities)
+    .setChromeOptions(options)
+    .build();
+}
 
 browser.waitForElement = function(locatorOrElement, timeoutMsOpt) {
   return browser.wait(
@@ -102,24 +105,21 @@ browser.waitForPendingRequests = timeout => {
   });
 };
 
-browser.addHeaders = function(headersMap) {
-  console.log("$browser.addHeaders() NOT implemented");
-  console.log("Update simulator.js to set the userAgent");
+browser.addHeaders = function() {
+  console.log(`$browser.addHeaders(): not supported ignoring.`);
 };
 
-browser.addHeader = function(headerKey, headerValue) {
-  console.log("$browser.addHeader() NOT implemented");
-  console.log("Update simulator.js to set the userAgent");
+browser.addHeader = function() {
+  console.log(`$browser.addHeader(): not supported ignoring.`);
 };
+
 
 browser.getCurrentUrl = function() {
   console.log("$browser.getCurrentUrl() NOT implemented");
 };
 
-module.exports = function() {
-  this.$driver = driver;
-  this.$browser = browser;
-  this.$util = util;
-  this.$env = env;
-  this.$http = http;
-};
+global.$driver = driver;
+global.$browser = browser;
+global.$util = util;
+global.$env = env;
+global.$http = http;
