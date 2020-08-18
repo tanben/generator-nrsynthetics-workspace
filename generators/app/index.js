@@ -14,20 +14,26 @@ module.exports = class extends Generator {
     };
   }
 
-  _promptAPIKey() {
+  _prompts() {
     const prompts = [
       {
         type: "confirm",
         name: "enableRemoteConnection",
         message:
           "Enable Download/Upload of Synthetics scripts to your account?",
-        default: false
+        default: true
       },
       {
         type: "input",
         name: "adminApiKey",
         message: "Enter your admin Api Key",
         when: resp => resp.enableRemoteConnection
+      },
+      {
+        type: "confirm",
+        name: "enableLocalGit",
+        message: "Initialize local Git repo?",
+        default: true
       }
     ];
 
@@ -41,7 +47,7 @@ module.exports = class extends Generator {
     this.log(
       yosay(`Welcome to the bedazzling ${chalk.red("Synthetics")} generator!`)
     );
-    return this._promptAPIKey();
+    return this._prompts();
   }
 
   configuring() {
@@ -68,10 +74,6 @@ module.exports = class extends Generator {
         target: this.destinationPath(".gitignore")
       },
       {
-        source: this.templatePath("_npmrc"),
-        target: this.destinationPath(".npmrc")
-      },
-      {
         source: this.templatePath("_package.json"),
         target: this.destinationPath("package.json")
       },
@@ -79,6 +81,10 @@ module.exports = class extends Generator {
       {
         source: this.templatePath("examples"),
         target: this.destinationPath("examples")
+      },
+      {
+        source: this.templatePath("images"),
+        target: this.destinationPath("images")
       },
       {
         source: this.templatePath("_vscode"),
@@ -124,7 +130,9 @@ module.exports = class extends Generator {
   }
 
   async end() {
-    this._createGit();
+    if (this.props.enableLocalGit) {
+      this._createGit();
+    }
   }
 
   _createGit() {

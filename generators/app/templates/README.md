@@ -1,64 +1,16 @@
 
 # New Relic Synthetics workspace
-[![SynthTemplateVersion](https://img.shields.io/badge/dynamic/json?color=blue&label=Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fgenerators%2Fapp%2Ftemplates%2F_package.json)](https://github.com/tanben/generator-nrsynthetics-workspace/blob/master/generators/app/templates/_package.json)
-[![Node](https://img.shields.io/badge/dynamic/json?color=important&label=Node&query=engines.node&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fgenerators%2Fapp%2Ftemplates%2F_package.json)]()  [![License](https://img.shields.io/badge/dynamic/json?label=License&query=license&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fpackage.json)](https://github.com/tanben/generator-nrsynthetics-workspace) 
+[![Node](https://img.shields.io/badge/dynamic/json?color=important&label=Node&query=engines.node&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fgenerators%2Fapp%2Ftemplates%2F_package.json)]()   [![SynthTemplateVersion](https://img.shields.io/badge/dynamic/json?color=blue&label=Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fgenerators%2Fapp%2Ftemplates%2F_package.json)](https://github.com/tanben/generator-nrsynthetics-workspace/blob/master/generators/app/templates/_package.json) [![License](https://img.shields.io/badge/dynamic/json?label=License&query=license&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fpackage.json)](https://github.com/tanben/generator-nrsynthetics-workspace) 
 
 
-### Generate New Relic Synthetics workspace for local development.
-
-**Note:** The admin key is stored in `.nrconfig.json`
-
-
-## Download / Upload monitor
-**Note:**  This option is only avaiabable if you opted answered `Yes` to 
-```
-? Enable Download/Upload of Synthetics scripts to your account? Y
-
-````
-### Download and Upload Monitor
-1. Change directory into `synthetics-local` directory.
-2. Download monitor by running this command: `npm run download` to upload `npm run upload`
-3. You will be presented with a list for Scripted Browser and API test.
-   You can select single or multiple monitors or select `ALL`.
-
-```
-> npm run download
-
-Using apiKey: "XXXX-XXXXXXXXXXXXXXXXXXXXXXXXX"
-? Select Monitors (Press <space> to select, <a> to toggle all, <i> to invert selection)
-❯ ◯ ALL
-   = Scripted Browsers = 
-  ◯ scriptedBrowser-test1
-  ◯ scriptedBrowser-test2
-   = API Tests = 
-  ◯ apiTest-test1
-  ◯ apiTest-test2
-
-``` 
-Files are downloaded to `./monitors` directory including the monitor configuration are saved in `nr-monitor.json`. 
-NOTE: Do not rename the file or update the configuration file.
+### Generate New Relic Synthetics workspace for local development, for **Scripted Browsers and API tests**.
+## Requirementes
+* [Node.js/NPM](https://www.npmjs.com/get-npm)
+* [Chrome Browser](https://www.google.com/chrome/)
+* [Git CLI](https://git-scm.com/downloads). This generator can automatically setup a local; Git, repo for you.
 
 
-## Running  script locally
-
-Add this to the top of your script, the library mimcs the Synthetics API and implements most common commands in Synthetics.
-
-```
-
-    if (typeof $env === "undefined" || $env === null) {
-      global._isApiTest = true;  // false, for Scripted Browser
-      require("../lib/simulator");
-    }
-```
-Open a terminal, and change directory to `./monitors` 
-```
-node <filename>.js
-```
-
-
-Or from VSCode : Open your script and hit **F5**.
-
-## Directory
+#### Files
 ```
 ./synthetics-local
 |
@@ -86,8 +38,90 @@ Or from VSCode : Open your script and hit **F5**.
 └── package-lock.json
 
 ```
+#### Verify local repo
+
+```
+btan@local:~//synthetics-local$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.editorconfig
+	.gitignore
+	.nrconfig.json.tmpl
+	.vscode/
+	LICENSE
+	README.md
+	apps/
+	examples/
+	lib/
+	monitors/
+	package-lock.json
+	package.json
+```
+**Note:** The admin key is stored in `.nrconfig.json` and is not commited see `.gitignore`
 
 
+## Download / Upload monitor
+**Note:**  This option is only avaiabable if you opted  `Yes`  to **Enable Download/Upload of Synthetics scripts.**
+
+
+1. Change directory into `synthetics-local` .
+2. Download monitor by running this command: `npm run download` to upload `npm run upload`
+3. You will be presented with a list for Scripted Browser and API test.
+   You can select single or multiple monitors or select `ALL`.
+
+```
+> npm run download
+
+Using apiKey: "XXXX-XXXXXXXXXXXXXXXXXXXXXXXXX"
+? Select Monitors (Press <space> to select, <a> to toggle all, <i> to invert selection)
+❯ ◯ ALL
+   = Scripted Browsers = 
+  ◯ scriptedBrowser-test1
+  ◯ scriptedBrowser-test2
+   = API Tests = 
+  ◯ apiTest-test1
+  ◯ apiTest-test2
+
+``` 
+Files are downloaded to `./monitors` directory which also includes the Synthetics monitor configurations for your arccount, these are saved in `nr-monitor.json`. 
+
+**NOTE:**  Do not rename the monitor file name(s) or update the configuration file.
+
+
+## Running  script locally
+
+1. Add this to the top of your script, the library mimcs the Synthetics API and implements most common commands in Synthetics.
+
+```
+
+    if (typeof $env === "undefined" || $env === null) {
+      global._isApiTest = true;  // false, for Scripted Browser
+      require("../lib/simulator");
+    }
+```
+2. Execute the script by hitting *F5* from VScode or open a terminal, run `node <filename>.js` in the `./monitors`  directory.
+```
+monitors>  node <filename>.js
+```
+
+## Running Examples
+### API Test
+```
+btan@local:~/synthetics-local$ node examples/apiTest.js 
+Response: { widgetCount: 10, widgetType: 'gear' }
+
+```
+### Scripted Browser
+```
+btan@local:~/synthetics-local$ node examples/scriptedBrowser.js 
+
+```
+Browser opens
+![image](./images/scriptedBrowser.png)
 
 ## License
 
