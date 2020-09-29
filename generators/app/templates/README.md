@@ -1,6 +1,6 @@
 
 # New Relic Synthetics workspace
-[![Node](https://img.shields.io/badge/dynamic/json?color=important&label=Node&query=engines.node&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fgenerators%2Fapp%2Ftemplates%2F_package.json)]()   [![SynthTemplateVersion](https://img.shields.io/badge/dynamic/json?color=blue&label=Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fgenerators%2Fapp%2Ftemplates%2F_package.json)](https://github.com/tanben/generator-nrsynthetics-workspace/blob/master/generators/app/templates/_package.json) [![License](https://img.shields.io/badge/dynamic/json?label=License&query=license&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fpackage.json)](https://github.com/tanben/generator-nrsynthetics-workspace) 
+[![Node](https://img.shields.io/badge/dynamic/json?color=important&label=Node&query=engines.node&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fgenerators%2Fapp%2Ftemplates%2F_package.json)]()   [![SynthTemplateVersion](https://img.shields.io/badge/dynamic/json?color=blue&label=Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fgenerators%2Fapp%2Ftemplates%2F_package.json)](https://github.com/tanben/generator-nrsynthetics-workspace/blob/master/generators/app/templates/_package.json) [![License](https://img.shields.io/badge/dynamic/json?label=License&query=license&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fpackage.json)](https://github.com/tanben/generator-nrsynthetics-workspace)
 
 
 ### Generate New Relic Synthetics workspace for local development, for **Scripted Browsers and API tests**.
@@ -79,15 +79,15 @@ Untracked files:
 Using apiKey: "XXXX-XXXXXXXXXXXXXXXXXXXXXXXXX"
 ? Select Monitors (Press <space> to select, <a> to toggle all, <i> to invert selection)
 ❯ ◯ ALL
-   = Scripted Browsers = 
+   = Scripted Browsers =
   ◯ scriptedBrowser-test1
   ◯ scriptedBrowser-test2
-   = API Tests = 
+   = API Tests =
   ◯ apiTest-test1
   ◯ apiTest-test2
 
-``` 
-Files are downloaded to `./monitors` directory which also includes the Synthetics monitor configurations for your arccount, these are saved in `nr-monitor.json`. 
+```
+Files are downloaded to `./monitors` directory which also includes the Synthetics monitor configurations for your arccount, these are saved in `nr-monitor.json`.
 
 **NOTE:**  Do not rename the monitor file name(s) or update the configuration file.
 
@@ -110,18 +110,54 @@ monitors>  node <filename>.js
 
 ## Running Examples
 ### API Test
+Open the file examples/apiTest.js and `F5` to execute.
+
+Go to troubleshooting section if you received an error:
+> Can't find Node.js binary "node": path does not exist. Make sure Node.js is installed and in your PATH, or set the "runtimeExecutable" in your launch.json
+
 ```
-btan@local:~/synthetics-local$ node examples/apiTest.js 
+btan@local:~/synthetics-local$ node examples/apiTest.js
 Response: { widgetCount: 10, widgetType: 'gear' }
 
 ```
 ### Scripted Browser
+Open the file examples/apiTest.js and `F5` to execute.
+
+Go to troubleshooting section if you received an error:
+> Can't find Node.js binary "node": path does not exist. Make sure Node.js is installed and in your PATH, or set the "runtimeExecutable" in your launch.json
+
 ```
-btan@local:~/synthetics-local$ node examples/scriptedBrowser.js 
+btan@local:~/synthetics-local$ node examples/scriptedBrowser.js
 
 ```
 Browser opens
 ![image](./images/scriptedBrowser.png)
+
+
+## Troubelshooting
+### Error Message
+> Can't find Node.js binary "node": path does not exist. Make sure Node.js is installed and in your PATH, or set the "runtimeExecutable" in your launch.json
+
+Edit the file `.vscode/launch.json` , and add the "runtimeExecutable" property with the Node path:
+```
+      "runtimeExecutable": "<Node binary absolute path>",
+```
+Example:
+```
+  {
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "/Users/btan/.nvm/versions/node/v12.13.0/bin/node",
+      "program": "${file}"
+    }
+  ]
+}
+```
 
 ## License
 
