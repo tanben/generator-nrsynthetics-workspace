@@ -1,7 +1,7 @@
-# generator-nrsynthetics-workspace 
+# generator-nrsynthetics-workspace
 
 [![NPM](https://img.shields.io/badge/dynamic/json?color=orange&label=NPM&query=engines.npm&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fpackage.json)]() [![GitVersion](https://img.shields.io/badge/Git%20CLI-%3E2.25.1-orange)]()  [![Version](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fpackage.json)](https://github.com/tanben/generator-nrsynthetics-workspace)   [![SynthTemplateVersion](https://img.shields.io/badge/dynamic/json?color=blue&label=SyntheticsTemplate&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fgenerators%2Fapp%2Ftemplates%2F_package.json
-)](https://github.com/tanben/generator-nrsynthetics-workspace/blob/master/generators/app/templates/_package.json)  [![License](https://img.shields.io/badge/dynamic/json?label=License&query=license&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fpackage.json)](https://github.com/tanben/generator-nrsynthetics-workspace) 
+)](https://github.com/tanben/generator-nrsynthetics-workspace/blob/master/generators/app/templates/_package.json)  [![License](https://img.shields.io/badge/dynamic/json?label=License&query=license&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fpackage.json)](https://github.com/tanben/generator-nrsynthetics-workspace)
 
 
 
@@ -36,7 +36,7 @@ yo @tanben/nrsynthetics-workspace
 
 2. Select `Yes` (default) when prompted `? Enable Download/Upload of Synthetics scripts to your account?`
 
-3. Enter your Admin API Key when prompted, if you answered `Yes` from step-1. 
+3. Enter your Admin API Key when prompted, if you answered `Yes` from step-1.
 
 ```
 This generator can also be run with: yo @tanben/nrsynthetics-workspace
@@ -48,9 +48,9 @@ This generator can also be run with: yo @tanben/nrsynthetics-workspace
    `---------´   │        generator!        │
     ( _´U`_ )    ╰──────────────────────────╯
     /___A___\   /
-     |  ~  |     
-   __'.___.'__   
- ´   `  |° ´ Y ` 
+     |  ~  |
+   __'.___.'__
+ ´   `  |° ´ Y `
 
 ? Enable Download/Upload of Synthetics scripts to your account? Yes
 ? Enter your admin Api Key NRAA-XXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -131,15 +131,15 @@ Untracked files:
 Using apiKey: "XXXX-XXXXXXXXXXXXXXXXXXXXXXXXX"
 ? Select Monitors (Press <space> to select, <a> to toggle all, <i> to invert selection)
 ❯ ◯ ALL
-   = Scripted Browsers = 
+   = Scripted Browsers =
   ◯ scriptedBrowser-test1
   ◯ scriptedBrowser-test2
-   = API Tests = 
+   = API Tests =
   ◯ apiTest-test1
   ◯ apiTest-test2
 
-``` 
-Files are downloaded to `./monitors` directory which also includes the Synthetics monitor configurations for your arccount, these are saved in `nr-monitor.json`. 
+```
+Files are downloaded to `./monitors` directory which also includes the Synthetics monitor configurations for your arccount, these are saved in `nr-monitor.json`.
 
 **NOTE:**  Do not rename the monitor file name(s) or update the configuration file.
 
@@ -162,19 +162,54 @@ monitors>  node <filename>.js
 
 ## Running Examples
 ### API Test
+Open the file examples/apiTest.js and `F5` to execute.
+
+Go to troubleshooting section if you received an error:
+> Can't find Node.js binary "node": path does not exist. Make sure Node.js is installed and in your PATH, or set the "runtimeExecutable" in your launch.json
+
 ```
-btan@local:~/synthetics-local$ node examples/apiTest.js 
+btan@local:~/synthetics-local$ node examples/apiTest.js
 Response: { widgetCount: 10, widgetType: 'gear' }
 
 ```
 ### Scripted Browser
+Open the file examples/apiTest.js and `F5` to execute.
+
+Go to troubleshooting section if you received an error:
+> Can't find Node.js binary "node": path does not exist. Make sure Node.js is installed and in your PATH, or set the "runtimeExecutable" in your launch.json
+
 ```
-btan@local:~/synthetics-local$ node examples/scriptedBrowser.js 
+btan@local:~/synthetics-local$ node examples/scriptedBrowser.js
 
 ```
 Browser opens
 ![image](./images/scriptedBrowser.png)
 
+
+## Troubelshooting
+### Error Message
+> Can't find Node.js binary "node": path does not exist. Make sure Node.js is installed and in your PATH, or set the "runtimeExecutable" in your launch.json
+
+Edit the file `.vscode/launch.json` , and add the "runtimeExecutable" property with the Node path:
+```
+      "runtimeExecutable": "<Node binary absolute path>",
+```
+Example:
+```
+  {
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "/Users/btan/.nvm/versions/node/v12.13.0/bin/node",
+      "program": "${file}"
+    }
+  ]
+}
+```
 
 ## License
 
