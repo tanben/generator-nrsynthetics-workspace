@@ -148,6 +148,8 @@ Files are downloaded to `./monitors` directory which also includes the Synthetic
 
 1. Add this to the top of your script, the library mimcs the Synthetics API and implements most common commands in Synthetics.
 
+> It's important that `global._isApiTest` is set to `false`, for scripted browser tests.
+
 ```
 
     if (typeof $env === "undefined" || $env === null) {
@@ -188,9 +190,13 @@ Browser opens
 
 ## Troubelshooting
 ### Error Message
-> Can't find Node.js binary "node": path does not exist. Make sure Node.js is installed and in your PATH, or set the "runtimeExecutable" in your launch.json
 
-Edit the file `.vscode/launch.json` , and add the "runtimeExecutable" property with the Node path:
+#### TypeError: $browser.get is not a function. When running scripted browsers.
+> Make sure that you've set:  `global._isApiTest = false`
+
+#### Can't find Node.js binary "node": path does not exist. Make sure Node.js is installed and in your PATH, or set the "runtimeExecutable" in your launch.json
+
+> Edit the file `.vscode/launch.json` , and add the "runtimeExecutable" property with the Node path:
 ```
       "runtimeExecutable": "<Node binary absolute path>",
 ```
@@ -213,4 +219,4 @@ Example:
 
 ## License
 
-Apache-2.0 © [Benedicto Tan](https://github.com/tanben)
+Apache-2.0
