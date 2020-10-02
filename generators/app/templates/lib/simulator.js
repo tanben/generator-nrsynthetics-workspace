@@ -46,18 +46,26 @@ const env = {
 // https://chromium.googlesource.com/chromium/src/+/master/chrome/common/pref_names.cc
 var options = new chrome.Options();
 
-// Fake chrome 72 browser
+//! Set User-agent chrome 72 browser
 options.addArguments(
-  '--user-agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 "'
+  'user-agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 "'
 );
 
-// Open devtools
+//! Open devtools
 // options.addArguments(
-//   '--auto-open-devtools-for-tabs'
+//   'auto-open-devtools-for-tabs'
 // )
 
-// incognito
+//! incognito
 // options.AddArgument("incognito");
+
+
+//! Set headless mode
+// options.addArguments("headless");
+// options.addArguments("no-sandbox");
+// options.addArguments("window-size=1200,1100");
+
+
 var capabilities = {
   browserName: "chrome",
   loggingPrefs: {
