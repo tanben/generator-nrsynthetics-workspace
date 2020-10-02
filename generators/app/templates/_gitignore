@@ -1,4 +1,5 @@
 common
 .nrconfig.json
+.nrconfig.json.tmpl
 node_modules
 .npmrc

@@ -2,3 +2,4 @@ node_modules
 coverage
 .npmrc
 .nrconfig.json
+.nrconfig.json.tmpl
