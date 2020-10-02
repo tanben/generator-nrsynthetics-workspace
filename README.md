@@ -102,7 +102,6 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
 	.editorconfig
 	.gitignore
-	.nrconfig.json.tmpl
 	.vscode/
 	LICENSE
 	README.md

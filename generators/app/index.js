@@ -105,10 +105,6 @@ module.exports = class extends Generator {
         {
           source: this.templatePath("_nrconfig.json"),
           target: this.destinationPath(".nrconfig.json")
-        },
-        {
-          source: this.templatePath("_nrconfig.json"),
-          target: this.destinationPath(".nrconfig.json.tmpl")
         }
       ];
 
