@@ -1,6 +1,6 @@
 {
   "name": "@tanben/generator-nrsynthetics-workspace",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Generate local workspace for creating/testing NR Synthetics ScriptedBrowse and API Tests.",
   "homepage": "https://github.com/tanben",
   "author": {
@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "yeoman-generator": "^2.0.1",
-    "chalk": "^2.1.0",
+    "chalk": "^4.1.0",
     "yosay": "^2.0.1"
   },
   "eslintConfig": {
