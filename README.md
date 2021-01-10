@@ -70,9 +70,12 @@ Note: A local repo is setup for you, which would allow you to track and manage y
 |    ├── launch.json
 |
 ├── apps
+│   ├── deleteScripts.js
 │   ├── downloadConfig.js
 │   ├── downloadScripts.js
 │   ├── listLocalScripts.js
+│   └── updateSettings.js
+│   └── uploadLocalScripts.js
 │   └── uploadScripts.js
 |
 ├── examples
@@ -115,12 +118,15 @@ Untracked files:
 **Note:** The admin key is stored in `.nrconfig.json` and is not commited see `.gitignore`
 
 
-## Download / Upload monitor
+## Download / Upload & Manage monitor
 **Note:**  This option is only avaiabable if you opted  `Yes`  to **Enable Download/Upload of Synthetics scripts.**
 
 
 1. Change directory into `synthetics-local` .
-2. Download monitor by running this command: `npm run download` to upload `npm run upload`
+2. Download monitor by running this command: `npm run download`; to upload `npm run upload`. You can also run any of the following commands:
+- To create a monitor: `npm run create`
+- To delete a monitor: `npm run delete`
+- To update a monitor's settings: `npm run update:settings`
 3. You will be presented with a list for Scripted Browser and API test.
    You can select single or multiple monitors or select `ALL`.
 

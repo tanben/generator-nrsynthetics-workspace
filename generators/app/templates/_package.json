@@ -9,7 +9,10 @@
   "scripts": {
     "download": "node apps/downloadScripts.js",
     "download:config": "node apps/downloadConfig.js",
-    "upload": "node apps/uploadScripts.js"
+    "upload": "node apps/uploadScripts.js",
+    "create": "node apps/uploadLocalScripts.js",
+    "update:settings": "node apps/updateSettings.js",
+    "delete": "node apps/deleteScripts.js"
   },
   "dependencies": {
     "atob": "^2.1.0",

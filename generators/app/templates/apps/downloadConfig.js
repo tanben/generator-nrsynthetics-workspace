@@ -28,7 +28,7 @@ console.log(`Using apiKey: ${colorize.orange(JSON.stringify(apiKey))}`);
   });
 
   const { count } = response;
-  console.log(`Totol scripts ${colorize.orange(count)}`);
+  console.log(`Total scripts ${colorize.orange(count)}`);
 })().then(
   _ => {
     console.log(`Download ${colorize.green("Complete")}`);
