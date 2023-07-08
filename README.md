@@ -1,11 +1,13 @@
-# generator-nrsynthetics-workspace
+# New Relic Synthetics Workspace Generator
 
 [![NPM](https://img.shields.io/badge/dynamic/json?color=orange&label=NPM&query=engines.npm&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fpackage.json)]() [![GitVersion](https://img.shields.io/badge/Git%20CLI-%3E2.25.1-orange)]()  [![Version](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fpackage.json)](https://github.com/tanben/generator-nrsynthetics-workspace)   [![SynthTemplateVersion](https://img.shields.io/badge/dynamic/json?color=blue&label=SyntheticsTemplate&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fgenerators%2Fapp%2Ftemplates%2F_package.json
 )](https://github.com/tanben/generator-nrsynthetics-workspace/blob/master/generators/app/templates/_package.json)  [![License](https://img.shields.io/badge/dynamic/json?label=License&query=license&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fpackage.json)](https://github.com/tanben/generator-nrsynthetics-workspace)
 
 
 
-### Generate local workspace for creating/testing NR Synthetics ScriptedBrowse and API Tests.
+### Generate New Relic Synthetics workspace for development and testing of:
+* Synthetics Scripted Browser
+* Synthetics API test
 
 ## Requirementes
 * [Node.js/NPM](https://www.npmjs.com/get-npm)
