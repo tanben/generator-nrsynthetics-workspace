@@ -1,36 +1,39 @@
 # New Relic Synthetics Workspace Generator
+The New Relic Synthetics Workspace Generator is a Yeoman generator that helps you set up a development and testing environment for New Relic Synthetics Scripted Browser and API tests. It provides a streamlined workflow for creating, managing, and running your Synthetics scripts locally.
 
-[![NPM](https://img.shields.io/badge/dynamic/json?color=orange&label=NPM&query=engines.npm&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fpackage.json)]() [![GitVersion](https://img.shields.io/badge/Git%20CLI-%3E2.25.1-orange)]()  [![Version](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Version&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fpackage.json)](https://github.com/tanben/generator-nrsynthetics-workspace)   [![SynthTemplateVersion](https://img.shields.io/badge/dynamic/json?color=blue&label=SyntheticsTemplate&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fgenerators%2Fapp%2Ftemplates%2F_package.json
-)](https://github.com/tanben/generator-nrsynthetics-workspace/blob/master/generators/app/templates/_package.json)  [![License](https://img.shields.io/badge/dynamic/json?label=License&query=license&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftanben%2Fgenerator-nrsynthetics-workspace%2Fmaster%2Fpackage.json)](https://github.com/tanben/generator-nrsynthetics-workspace)
+## Features
+
+* Generate a workspace for developing and testing New Relic Synthetics scripts
+*  Download and upload Synthetics scripts to your New Relic account
+*  Run Synthetics scripts locally for debugging and testing
+*  Manage Synthetics monitors (create, delete, update settings)
+*  Examples and templates for Scripted Browser and API tests
 
 
 
-### Generate New Relic Synthetics workspace for development and testing of:
-* Synthetics Scripted Browser
-* Synthetics API test
+## Prerequisites
+* Node.js
+* Git CLI (optional, for local repo)
 
-## Requirementes
-* [Node.js/NPM](https://www.npmjs.com/get-npm)
-* [Chrome Browser](https://www.google.com/chrome/)
-* [Git CLI](https://git-scm.com/downloads) (optional, for local repo)
 
-## Installation
+## Getting Started
 
-First, install [Yeoman](http://yeoman.io) and generator-nrsynthetics-workspace using [npm](https://www.npmjs.com/).
-
-```bash
-npm install -g yo
-npm install -g @tanben/generator-nrsynthetics-workspace
+1. Install Yeoman and generator-nrsynthetics-workspace globally:
+```
+  
+  npm install -g yo
+  npm install -g @tanben/generator-nrsynthetics-workspace 
 ```
 
-Then generate your new project:
-
-```bash
-
+2. Generate your new Synthetics workspace:
+```
 yo @tanben/nrsynthetics-workspace
-
 ```
-
+3. Follow the prompts to configure your workspace and connect it to your New Relic account.
+4. Once the workspace is generated, navigate to the synthetics-local directory:
+```
+cd synthetics-local
+```
 
 ## Generating a NR Synthetics workspace
 
